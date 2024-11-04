@@ -1,0 +1,29 @@
+.border {
+    border-width: 3px; /* Adjust border width if necessary */
+}
+
+.p-4 {
+    padding: 12rem; /* Increase padding to 3 times the original */
+}
+
+.product {
+    width: 400px; /* Adjust width to 3 times the original if necessary */
+    height: auto; /* Set height to auto to maintain aspect ratio */
+}
+
+.relative {
+    width: 100%; /* Ensure the image scales correctly */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.text-center {
+    font-size: 1.5rem; /* Increase font size for better visibility */
+}
+
+.text-sm {
+    font-size: 1.5rem; /* Increase text size */
+}
+
+.text-xs {
+    font-size: 1.25rem; /* Increase text size */
+}

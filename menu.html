@@ -1,0 +1,198 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <script>
+        function filterProducts() {
+            const filter = document.getElementById('sort-by').value;
+            const products = document.querySelectorAll('.product');
+            let visibleCount = 0;
+            products.forEach(product => {
+                if (filter === 'all' || product.classList.contains(filter)) {
+                    product.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+            document.getElementById('product-count').innerText = visibleCount + ' products';
+        }
+    </script>
+</head>
+<body class="bg-white text-black font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-4">
+            <!-- <div class="flex items-center space-x-2">
+                <input class="mr-2" id="show-filters" type="checkbox"/>
+                <label class="text-sm" for="show-filters">Pakaian Cihampelas</label>
+            </div> -->
+            <div class="text-sm" id="product-count">12 products</div>
+            <div class="flex items-center space-x-2">
+                <span class="text-sm">Filter :</span>
+                <select class="text-sm border border-gray-300 rounded px-2 py-1" id="sort-by" onchange="filterProducts()">
+                    <option value="all">All</option>
+                    <option value="distressed">Distressed</option>
+                    <option value="trying">Trying</option>
+                    <option value="skinny">Skinny</option>
+                    <option value="loose">Loose</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Product 1 -->
+            <div class="border p-4 product distressed">
+                <div class="relative">
+                    <img alt="Distressed Straight Fit Jeans" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/iy5JtPIEY6rUCR6nQ9KTm8zrNyr5NVrvglGBs6Muka6Z5Y7E.jpg" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 35%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">BUROCS</div>
+                    <div class="text-sm font-semibold">Straight Fit Jeans</div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">29,24 €</span>
+                        <span class="line-through text-gray-500">44,90 €</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="border p-4 product trying">
+                <div class="relative">
+                    <img alt="Trying T-Shirt" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/HzyTmFTejbz4ISIi3aepyEIiOQDuWh1dB2VCeRpG3vPRLHbnA.jpg" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 60%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">BUROCS</div>
+                    <div class="text-sm font-semibold">Trying T-Shirt</div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">16,00 €</span>
+                        <span class="line-through text-gray-500">39,90 €</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="border p-4 product distressed">
+                <div class="relative">
+                    <img alt="Distressed Straight Fit Jeans" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/iy5JtPIEY6rUCR6nQ9KTm8zrNyr5NVrvglGBs6Muka6Z5Y7E.jpg" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 35%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">BUROCS</div>
+                    <div class="text-sm font-semibold">Distressed Straight Fit Jeans</div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">29,24 €</span>
+                        <span class="line-through text-gray-500">44,90 €</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="border p-4 product loose">
+                <div class="relative">
+                    <img alt="Loose Jeans" class="w-full h-auto" height="400" src="" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 60%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">LOOSE</div>
+                    <div class="text-sm font-semibold">Loose Jeans</div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">16,00 €</span>
+                        <span class="line-through text-gray-500">39,90 €</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="border p-4 product distressed">
+                <div class="relative">
+                    <img alt="Distressed Straight Fit Jeans" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/iy5JtPIEY6rUCR6nQ9KTm8zrNyr5NVrvglGBs6Muka6Z5Y7E.jpg" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 35%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">BUROCS</div>
+                    <div class="text-sm font-semibold">Distressed Straight Fit Jeans</div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">29,24 €</span>
+                        <span class="line-through text-gray-500">44,90 €</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="border p-4 product trying">
+                <div class="relative">
+                    <img alt="Trying T-Shirt" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/HzyTmFTejbz4ISIi3aepyEIiOQDuWh1dB2VCeRpG3vPRLHbnA.jpg" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 60%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">BUROCS</div>
+                    <div class="text-sm font-semibold">Trying T-Shirt</div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">16,00 €</span>
+                        <span class="line-through text-gray-500">39,90 €</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 7 -->
+            <div class="border p-4 product distressed">
+                <div class="relative">
+                    <img alt="Distressed Straight Fit Jeans" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/iy5JtPIEY6rUCR6nQ9KTm8zrNyr5NVrvglGBs6Muka6Z5Y7E.jpg" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 35%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">BUROCS</div>
+                    <div class="text-sm font-semibold">Distressed Straight Fit Jeans</div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">29,24 €</span>
+                        <span class="line-through text-gray-500">44,90 €</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 8 -->
+            <div class="border p-4 product loose">
+                <div class="relative">
+                    <img alt="Loose Jeans" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/HzyTmFTejbz4ISIi3aepyEIiOQDuWh1dB2VCeRpG3vPRLHbnA.jpg" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 60%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">BUROCS</div>
+                    <div class="text-sm font-semibold">Loose Jeans</div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">16,00 €</span>
+                        <span class="line-through text-gray-500">39,90 €</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 9 -->
+            <div class="border p-4 product skinny">
+                <div class="relative">
+                    <img alt="Skinny Jeans" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/iy5JtPIEY6rUCR6nQ9KTm8zrNyr5NVrvglGBs6Muka6Z5Y7E.jpg" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 35%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">BUROCS</div>
+                    <div class="text-sm font-semibold">Skinny Jeans</div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">29,24 €</span>
+                        <span class="line-through text-gray-500">44,90 €</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 10 -->
+            <div class="border p-4 product skinny">
+                <div class="relative">
+                    <img alt="Skinny Jeans" class="w-full h-auto" height="400" src="https://storage.googleapis.com/a1aa/image/HzyTmFTejbz4ISIi3aepyEIiOQDuWh1dB2VCeRpG3vPRLHbnA.jpg" width="300"/>
+                    <div class="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1">SAVE 60%</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-xs text-gray-500">BUROCS</div>
+                    <div class="text-sm font-semibold">Skinny Jeans/div>
+                    <div class="text-sm mt-2">
+                        <span class="text-green-600">16,00 €</span>
+                        <span class="line-through text-gray-500">39,90 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
